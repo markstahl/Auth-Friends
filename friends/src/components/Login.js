@@ -30,6 +30,7 @@ class Login extends React.Component {
 
   login = e => {
     e.preventDefault();
+    console.log(this.state.credentials)
     axiosWithAuth()
       .post('/login', this.state.credentials)
       .then(res => {
@@ -42,7 +43,7 @@ class Login extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="login">
         <h1>Log In</h1>
         {this.props.fetchingData && (
           <div className="key spinner">
